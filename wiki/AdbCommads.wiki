@@ -1,0 +1,33 @@
+#summary list of commands adb tools.
+#labels Phase-Requirements
+
+Android Debug Bridge version 1.0.25
+
+ -d                            - directs command to the only connected USB device
+                                 returns an error if more than one USB device is present.
+ -e                            - directs command to the only running emulator.
+                                 returns an error if more than one emulator is running.
+ -s <serial number>            - directs command to the USB device or emulator with
+                                 the given serial number. Overrides ANDROID_SERIAL
+                                 envivornment variable.
+ -p <product name or path>     - simple product name like 'sooner', or
+                                 a relative/absolute path to a product
+                                 out directory like 'out/target/product/sooner'.
+                                 If -p is not specified, the ANDROID_PRODUCT_OUT
+                                 environment variable is used, which must
+                                 be an absolute path.
+ devices                       - list all connected devices
+ connect <host>:<port>         - connect to a device via TCP/IP 
+ disconnect <host>:<port>      - disconnect from a TCP/IP device
+
+device commands:
+  adb push <local> <remote>    - copy file/dir to device
+  adb pull <remote> <local>    - copy file/dir from device
+  adb sync [ <directory> ]     - copy host->device only if changed
+                                 (see 'adb help all')
+  adb shell                    - run remote shell interactively
+  adb shell <command>          - run remote shell command
+  adb emu <command>            - run emulator console command
+  adb logcat [ <filter-spec> ] - View device log
+  adb forward <local> <remote> - forward socket connections
+                                 forward specs are one of: 
