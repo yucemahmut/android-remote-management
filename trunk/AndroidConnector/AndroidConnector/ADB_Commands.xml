@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <adb>
+    <start-server>
+      <command>start-server</command>
+      <parameter></parameter>
+    </start-server>
+    <stop-server>
+      <command>kill-server</command>
+      <parameter></parameter>
+    </stop-server>
+    <devices>
+      <command>devices</command>
+      <parameter>-l</parameter>
+    </devices>
+  </adb>
+</root>
